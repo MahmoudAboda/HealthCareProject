@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PatientDataEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PATIENT_DATA"
+  AliasName="PatientDataEo"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <Attribute
+    Name="PatientId"
+    ColumnName="PATIENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="PATIENT_DATA"
+    PrimaryKey="true"
+    IsEffectiveDateSequence="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"
+    IsNotNull="true"/>
+  <Attribute
+    Name="PatientName"
+    Precision="20"
+    ColumnName="PATIENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phonenum"
+    ColumnName="PHONENUM"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PATIENT_DATA">
+    <validation:RegExpValidationBean
+      Name="PhonenumRule0"
+      ResId="model.bc.entity.PatientDataEo.Phonenum_Rule_1"
+      OnAttribute="Phonenum"
+      Pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+      Inverse="false"/>
+    <validation:RegExpValidationBean
+      Name="PhonenumRule1"
+      ResId="model.bc.entity.PatientDataEo.Phonenum_Rule_1"
+      OnAttribute="Phonenum"
+      Pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    Precision="20"
+    ColumnName="GENDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    Precision="20"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Age"
+    ColumnName="AGE"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PATIENT_DATA">
+    <validation:RangeValidationBean
+      Name="AgeRule0"
+      ResId="model.bc.entity.PatientDataEo.Age_Rule_0"
+      OnAttribute="Age"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="1"
+      MaxValue="100"/>
+    <validation:RangeValidationBean
+      Name="AgeRule1"
+      ResId="model.bc.entity.PatientDataEo.Age_Rule_1"
+      OnAttribute="Age"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="1"
+      MaxValue="110"/>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="20"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="model.bc.entity.PatientDataEo.Email_Rule_0"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
+    <validation:RegExpValidationBean
+      Name="EmailRule1"
+      ResId="model.bc.entity.PatientDataEo.Email_Rule_1"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="PatientCountry"
+    Precision="20"
+    ColumnName="PATIENT_COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PatientDiease"
+    Precision="20"
+    ColumnName="PATIENT_DIEASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PatientDataAgeCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_AGE_CHECK"/>
+      <Attr Name="_checkCondition" Value='"AGE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PatientDataEmailCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_EMAIL_CHECK"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PatientDataGenderCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_GENDER_CHECK"/>
+      <Attr Name="_checkCondition" Value='"GENDER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PatientDataPasswordCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PASSWORD_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PASSWORD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PatientDataPatientIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PATIENT_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PATIENT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="PatientDataPatientNameChec">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PATIENT_NAME_CHEC"/>
+      <Attr Name="_checkCondition" Value='"PATIENT_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PatientDataPhonenumCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PHONENUM_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PHONENUM" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PatientDataPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bc.entity.PatientDataEo.PatientId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

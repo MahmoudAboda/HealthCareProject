@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PatientDataVo1"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="GenderDropDownVO1"
+    ViewObjectName="DropDownlist.bc.uiview.GenderDropDownVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Gender"
+    ListVOName="GenderDropDownVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GenderTitle"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GenderTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="PatientDataEo"
+    Entity="DropDownlist.bc.entity.PatientDataEo"/>
+  <ViewAttribute
+    Name="PatientId"
+    PrecisionRule="true"
+    AliasName="PATIENT_ID"
+    IsUpdateable="while_insert"
+    IsSelected="false"
+    Domain="oracle.jbo.domain.DBSequence"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="$none$"/>
+  <ViewAttribute
+    Name="PatientName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PatientName"
+    EntityUsage="PatientDataEo"
+    AliasName="PATIENT_NAME"/>
+  <ViewAttribute
+    Name="Password"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Password"
+    EntityUsage="PatientDataEo"
+    AliasName="PASSWORD"/>
+  <ViewAttribute
+    Name="Phone"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Phone"
+    EntityUsage="PatientDataEo"
+    AliasName="PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="DropDownlist.bc.uiview.PatientDataVo1.Phone_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="DropDownlist.bc.uiview.PatientDataVo1.Phone_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Email"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="PatientDataEo"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="Gender"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="PatientDataEo"
+    AliasName="GENDER"
+    LOVName="LOV_Gender">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Age"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Age"
+    EntityUsage="PatientDataEo"
+    AliasName="AGE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="DropDownlist.bc.uiview.PatientDataVo1.Age_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="DropDownlist.bc.uiview.PatientDataVo1.Age_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="sugar_doctor.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="100px" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" valign="middle">
+                        <af:outputText value="Doctors specializing in the treatment of Sugar  at Cairo Giza Sharqia" id="ot1"
+                                       truncateAt="0" inlineStyle="color:green; font-size:22px; margin-left:200px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="500px" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <dvt:map id="map" startingX="0.0" mapServerConfigId="newconfig"
+                                 baseMapName="ELOCATION.WORLD_MAP" mapZoom="0" inlineStyle="width:1251px; height:512px;"
+                                 startingY="0.0" autoZoomThemeId="mt1">
+                            <?audit suppress oracle.adf.dvt.acc-compreqsummary?>
+                            <dvt:mapPointTheme id="mt1" value="#{bindings.SugarDoctor1.geoMapModel}"
+                                               clickListener="#{bindings.SugarDoctor1.geoMapModel.processClickAction}"
+                                               selectionListener="#{bindings.SugarDoctor1.geoMapModel.processSelection}"/>
+                        </dvt:map>
+                        <af:button text="Back" id="b1" inlineStyle="margin-left:400px;font-size:20px;"
+                                   action="choose_doc"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="100px" marginBottom="5px" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

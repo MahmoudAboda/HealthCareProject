@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="choose_doctorPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="choosenDoctorDataVo1" RangeSize="25" DataControl="AppModuleAMDataControl1"
+              id="choosenDoctorDataVo1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="choosenDoctorDataVo1Iterator" id="DoctorName1">
+      <AttrNames>
+        <Item Value="DoctorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenDoctorDataVo1Iterator" id="DoctorSpecialization1">
+      <AttrNames>
+        <Item Value="DoctorSpecialization"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenDoctorDataVo1Iterator" id="DoctorCountry1">
+      <AttrNames>
+        <Item Value="DoctorCountry"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenDoctorDataVo1Iterator" id="DoctorCity1">
+      <AttrNames>
+        <Item Value="DoctorCity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenDoctorDataVo1Iterator" id="Email1">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenDoctorDataVo1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="choosenDoctorDataVo1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="choosenDoctorDataVo1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+  </bindings>
+</pageDefinition>

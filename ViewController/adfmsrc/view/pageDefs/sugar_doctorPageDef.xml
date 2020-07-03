@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="sugar_doctorPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SugarDoctor1" RangeSize="-1" DataControl="AppModuleAMDataControl1" id="SugarDoctor1Iterator"/>
+  </executables>
+  <bindings>
+    <mapTheme IterBinding="SugarDoctor1Iterator" id="SugarDoctor1" xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <mapThemeDataMap convert="false" mapThemeType="point">
+        <data>
+          <item value="Data"/>
+        </data>
+        <item type="lat_long" longitude="Lon" latitude="Lat" label="Data"/>
+      </mapThemeDataMap>
+    </mapTheme>
+  </bindings>
+</pageDefinition>

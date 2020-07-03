@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.bc.module.AppModuleAM">
+      <AppModuleConfig name="16E9E2EC7B7" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/Connection1DS" ApplicationName="model.bc.module.AppModuleAM" jbo.project="model.Model" BC4JConfigName="AppModuleAMLocal" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DeployPlatform="LOCAL" JDBCName="Connection1">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="model.bc.module.AppModuleAM"/>
+         <Tester FullProxyInterfaceName="model.bc.module.common.AppModuleAM"/>
+         <Custom ns0:LastUsedConfiguration="AppModuleAMLocal" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/Connection1DS" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="DropDownlist.bc.module.AppModuleAM">
+      <AppModuleConfig name="163EB1E8C53" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/Connection1DS" ApplicationName="DropDownlist.bc.module.AppModuleAM" jbo.project="model.Model" BC4JConfigName="AppModuleAMLocal" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DeployPlatform="LOCAL" JDBCName="Connection1">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="DropDownlist.bc.module.AppModuleAM"/>
+         <Tester FullProxyInterfaceName="DropDownlist.bc.module.common.AppModuleAM"/>
+         <Custom ns0:LastUsedConfiguration="AppModuleAMLocal" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/Connection1DS" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

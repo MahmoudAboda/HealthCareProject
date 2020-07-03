@@ -1,0 +1,5 @@
+The following Synchronization Actions were performed successfully:
+
+Entity :PatientDataEo
+  Key :PatientDataPatientIdCheck
+    Remove key attribute PatientId

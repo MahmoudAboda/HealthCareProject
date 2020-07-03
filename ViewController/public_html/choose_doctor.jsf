@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="choose_doctor.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="310px" id="gr1">
+                    <af:gridCell marginStart="5px" columnSpan="3" marginEnd="5px" id="gc1" halign="stretch"
+                                 valign="stretch">
+                        <af:image source="slide-two.jpg" id="i1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="90px" id="gr2">
+                    <af:gridCell marginStart="5px" width="15%" id="gc2"/>
+                    <af:gridCell marginStart="5px" width="70%" id="gc3" halign="center" valign="middle">
+                        <af:toolbar id="t1" inlineStyle="margin-bottom:20px;">
+                            <af:button text="Home" id="b4" inlineStyle="margin-left:500px;font-size:20px;"
+                                       action="Home"/>
+                            <af:button text="Back" id="b5" inlineStyle="font-size:20px;" action="pat_nav"/>
+                        </af:toolbar>
+                        <af:outputText value="Doctor : " id="ot1" inlineStyle="margin-left:160px; font-size:25px;"/>
+                        <af:outputText value="#{bindings.DoctorName1.inputValue}"
+                                       shortDesc="#{bindings.DoctorName1.hints.tooltip}" id="ot21"
+                                       inlineStyle="font-size:18px;color:blue;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="15%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="140px" id="gr3">
+                    <af:gridCell marginStart="5px" width="15%" id="gc5">
+                        <af:gridCell marginStart="5px" width="70%" id="gc6" halign="stretch" valign="stretch">
+                            <af:panelGridLayout id="pgl2">
+                                <af:gridRow marginTop="5px" height="30%" id="gr8">
+                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc18"
+                                                 halign="center" valign="top" inlineStyle="margin-bottom:20px;">
+                                        <af:outputText value="speciality : " id="ot3"
+                                                       inlineStyle="margin-left:100px;font-size:25px;"/>
+                                        <af:outputText value="#{bindings.DoctorSpecialization.inputValue}"
+                                                       shortDesc="#{bindings.DoctorSpecialization.hints.tooltip}"
+                                                       id="ot4" inlineStyle="font-size:15px;color:blue;"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="5px" height="50%" marginBottom="5px" id="gr9">
+                                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc19"
+                                                 halign="center" valign="bottom">
+                                        <af:outputText value="Governorate : " id="ot5"
+                                                       inlineStyle="margin-left:100px;font-size:25px;" truncateAt="0"/>
+                                        <af:outputText value="#{bindings.DoctorCountry.inputValue}"
+                                                       shortDesc="#{bindings.DoctorCountry.hints.tooltip}" id="ot6"
+                                                       inlineStyle="font-size:15px;color:blue;"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:gridCell>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="15%" marginEnd="5px" id="gc7" halign="stretch"
+                                 valign="stretch">
+                        <af:panelGridLayout id="pgl7">
+                            <af:gridRow marginTop="5px" height="50px" id="gr16">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc26" halign="center"
+                                             valign="middle">
+                                    <af:outputText value="Speciality : " id="ot17"
+                                                   inlineStyle="margin-left:100px;font-size:25px;"/>
+                                    <af:outputText value="#{bindings.DoctorSpecialization1.inputValue}"
+                                                   shortDesc="#{bindings.DoctorSpecialization1.hints.tooltip}"
+                                                   id="ot2" inlineStyle="font-size:18px;color:blue;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="10px" marginBottom="5px" id="gr17">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc27"/>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                        <af:panelGridLayout id="pgl8">
+                            <af:gridRow marginTop="5px" height="50px" marginBottom="5px" id="gr18">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc28" halign="center"
+                                             valign="middle" inlineStyle="margin-top:20px;">
+                                    <af:outputText value="Governorate : " id="ot19"
+                                                   inlineStyle="margin-left:100px;font-size:25px;"/>
+                                    <af:outputText value="#{bindings.DoctorCountry1.inputValue}"
+                                                   shortDesc="#{bindings.DoctorCountry1.hints.tooltip}" id="ot18"
+                                                   inlineStyle="font-size:18px;color:blue;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="130px" id="gr4">
+                    <af:gridCell marginStart="5px" width="15%" id="gc8"
+                                 inlineStyle="margin-right:-100px;" halign="end" valign="top">
+                        <af:link actionListener="#{bindings.Previous.execute}"
+                                 disabled="false" partialSubmit="true" id="l2"
+                                 icon="#{resource['images:if_skip-previous_326509.png']}"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="70%" id="gc9" halign="stretch" valign="stretch">
+                        <af:panelGridLayout id="pgl3">
+                            <af:gridRow marginTop="5px" height="60px" id="gr10">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc20" halign="center"
+                                             valign="middle">
+                                    <af:outputText value="city : " id="ot7"
+                                                   inlineStyle="margin-left:100px;font-size:25px;"/>
+                                    <af:outputText value="#{bindings.DoctorCity1.inputValue}"
+                                                   shortDesc="#{bindings.DoctorCity1.hints.tooltip}" id="ot20"
+                                                   inlineStyle="font-size:18px;color:blue;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="60px" marginBottom="5px" id="gr11">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc21" halign="center"
+                                             valign="middle">
+                                    <af:outputText value="Email : " id="ot9"
+                                                   inlineStyle="margin-left:100px;font-size:25px;"/>
+                                    <af:outputText value="#{bindings.Email1.inputValue}"
+                                                   shortDesc="#{bindings.Email1.hints.tooltip}" id="ot8"
+                                                   inlineStyle="font-size:18px;color:blue;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="15%" marginEnd="5px" id="gc10">
+                        <af:link actionListener="#{bindings.Next.execute}"
+                                 disabled="false" partialSubmit="true" id="l1"
+                                 icon="#{resource['images:if_next_293690.png']}" inlineStyle="margin-left:-100px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="60px" id="gr5">
+                    <af:gridCell marginStart="5px" width="15%" id="gc11" halign="stretch" valign="stretch"/>
+                    <af:gridCell marginStart="5px" width="70%" id="gc12" halign="stretch" valign="stretch">
+                        <af:panelGridLayout id="pgl4">
+                            <af:gridRow marginTop="5px" height="60px" id="gr12">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc22" halign="center"
+                                             valign="middle">
+                                    <af:outputText value="Phone : " id="ot11"
+                                                   inlineStyle="margin-left:100px;font-size:25px;"/>
+                                    <af:outputText value="#{bindings.Phone.inputValue}"
+                                                   shortDesc="#{bindings.Phone.hints.tooltip}" id="ot10"
+                                                   inlineStyle="font-size:18px;color:blue;">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Phone.format}"/>
+                                    </af:outputText>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr13">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc23"/>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="15%" marginEnd="5px" id="gc13" halign="stretch"
+                                 valign="stretch"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="20%" marginBottom="5px" id="gr6">
+                    <af:gridCell marginStart="5px" width="15%" id="gc14"/>
+                    <af:gridCell marginStart="5px" width="70%" id="gc15" halign="stretch" valign="stretch">
+                        <af:panelGridLayout id="pgl5">
+                            <af:gridRow id="gr19" height="100px">
+                                <af:gridCell id="gc29" halign="center" valign="bottom">
+                                    <af:outputText value="You can search for a specific doctor from here" id="ot12"
+                                                   inlineStyle="font-size:25px;color:blue;"/>
+                                    <af:button text="Search" id="b3" inlineStyle="font-size:20px;margin-left:15px;"
+                                               action="*search"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="90px" id="gr7">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17" halign="center"
+                                             valign="bottom" inlineStyle="height:30px;">
+                                    <af:outputText value="click here to visit Doctor Booking page  " id="ot13"
+                                                   inlineStyle="font-size:25px;color:blue;"/>
+                                    <af:button text="Visit" id="b1" inlineStyle="width:70px;font-size:20px;"
+                                               action="pat_res"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="60px" marginBottom="5px" id="gr14">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc24"
+                                             inlineStyle="margin-top:30px;"/>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                        <af:panelGridLayout id="pgl6">
+                            <af:gridRow marginTop="5px" height="80px" marginBottom="5px" id="gr15">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc25" halign="center"
+                                             valign="top">
+                                    <af:outputText value="click here to show " id="ot14"
+                                                   inlineStyle="font-size:25px;color:blue;"/>
+                                    <af:outputText value="#{bindings.DoctorSpecialization.inputValue}" id="ot15"
+                                                   inlineStyle="color:red;font-size:25px;"/>
+                                    <af:outputText value="  Doctors in google map  " id="ot16"
+                                                   inlineStyle="font-size:25px;color:blue;"/>
+                                    <af:button text="Show" id="b2" action="*router" inlineStyle="font-size:20px;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="15%" marginEnd="5px" id="gc16"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

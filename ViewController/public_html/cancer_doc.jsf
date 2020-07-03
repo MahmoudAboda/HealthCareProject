@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="cancer_doc.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="80px" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" valign="middle"
+                                 halign="start" inlineStyle="font-size:22px;color:green;">
+                        <af:outputText value="Doctors specializing in the treatment of cancer  at Cairo Giza Sharqia" id="ot1"
+                                       inlineStyle="margin-left:200px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="500px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <dvt:map id="map" startingX="0.0" mapServerConfigId="newconfig"
+                                 baseMapName="ELOCATION.WORLD_MAP" mapZoom="0" inlineStyle="width:1275px; height:496px;"
+                                 startingY="0.0" autoZoomThemeId="mt1">
+                            <?audit suppress oracle.adf.dvt.acc-compreqsummary?>
+                            <?audit suppress oracle.adf.dvt.acc-compreqsummary?>
+                            <dvt:mapPointTheme id="mt1" value="#{bindings.CancerDoc1.geoMapModel}"
+                                               clickListener="#{bindings.CancerDoc1.geoMapModel.processClickAction}"
+                                               selectionListener="#{bindings.CancerDoc1.geoMapModel.processSelection}"/>
+                        </dvt:map>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="80px" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                        <af:button text="Back" id="b1" inlineStyle="margin-left:450px;font-size:20px;"
+                                   action="*choose_doctor"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

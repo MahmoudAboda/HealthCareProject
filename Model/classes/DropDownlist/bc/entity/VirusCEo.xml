@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="VirusCEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="VIRUS_C"
+  AliasName="VirusCEo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Lon"
+    IsNotNull="true"
+    ColumnName="LON"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VIRUS_C"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Lat"
+    ColumnName="LAT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="VIRUS_C"/>
+  <Attribute
+    Name="Data"
+    Precision="40"
+    ColumnName="DATA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="VIRUS_C">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="VirusCPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="VIRUS_C_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.VirusCEo.Lon"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SugarDoctorEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SUGAR_DOCTOR"
+  AliasName="SugarDoctorEo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Lon"
+    IsNotNull="true"
+    Precision="126"
+    ColumnName="LON"
+    SQLType="FLOAT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="FLOAT"
+    TableName="SUGAR_DOCTOR"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Lat"
+    Precision="126"
+    ColumnName="LAT"
+    SQLType="FLOAT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="FLOAT"
+    TableName="SUGAR_DOCTOR"/>
+  <Attribute
+    Name="Data"
+    Precision="100"
+    ColumnName="DATA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUGAR_DOCTOR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SugarDoctorPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUGAR_DOCTOR_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.SugarDoctorEo.Lon"/>
+    </AttrArray>
+  </Key>
+</Entity>

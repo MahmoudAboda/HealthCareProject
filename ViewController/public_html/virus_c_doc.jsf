@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="virus_c_doc.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="50px" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:outputText value="Doctors specializing in the treatment of virus c  at Cairo Giza Sharqia" id="ot1"
+                                       inlineStyle="color:green;font-size:22px;margin-left:200px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="500px" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <dvt:map id="map" startingX="0.0" mapServerConfigId="newconfig"
+                                 baseMapName="ELOCATION.WORLD_MAP" mapZoom="0" inlineStyle="width:1258px; height:496px;"
+                                 startingY="0.0" autoZoomThemeId="mt1">
+                            <?audit suppress oracle.adf.dvt.acc-compreqsummary?>
+                            <dvt:mapPointTheme id="mt1" value="#{bindings.VirusC1.geoMapModel}"
+                                               clickListener="#{bindings.VirusC1.geoMapModel.processClickAction}"
+                                               selectionListener="#{bindings.VirusC1.geoMapModel.processSelection}"/>
+                        </dvt:map>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="25px" height="30px" marginBottom="5px" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" inlineStyle="margin-top:20px;">
+                        <af:button text="Back" id="b1" inlineStyle="font-size:20px; margin-left:400px;"
+                                   action="choose_doc"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

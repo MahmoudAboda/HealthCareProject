@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="specific_doctor.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="270px" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"
+                                 inlineStyle="background-color:WindowText;" halign="stretch" valign="stretch">
+                        <af:image source="#{resource['images:slide-three.jpg']}" id="i1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="450px" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="stretch"
+                                 valign="stretch">
+                        <af:panelGroupLayout layout="vertical" id="pgl2">
+                            <af:panelHeader text="Doctor Search" id="ph1">
+                                <af:query id="qryId1" headerText="Search" disclosed="true"
+                                          value="#{bindings.DoctorDataVoCriteriaQuery.queryDescriptor}"
+                                          model="#{bindings.DoctorDataVoCriteriaQuery.queryModel}"
+                                          queryListener="#{bindings.DoctorDataVoCriteriaQuery.processQuery}"
+                                          queryOperationListener="#{bindings.DoctorDataVoCriteriaQuery.processQueryOperation}"
+                                          resultComponentId="::resId1"/>
+                            </af:panelHeader>
+                            <af:table value="#{bindings.DoctorDataVo2.collectionModel}" var="row"
+                                      rows="#{bindings.DoctorDataVo2.rangeSize}"
+                                      emptyText="#{bindings.DoctorDataVo2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.DoctorDataVo2.collectionModel.selectedRow}"
+                                      rowSelection="multiple" fetchSize="#{bindings.DoctorDataVo2.rangeSize}"
+                                      id="resId1">
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.DoctorName.name}"
+                                           sortable="true" headerText="#{bindings.DoctorDataVo2.hints.DoctorName.label}"
+                                           id="resId1c1">
+                                    <af:outputText value="#{row.DoctorName}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.DoctorName.tooltip}"
+                                                   id="ot1"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.Phone.name}" sortable="true"
+                                           headerText="#{bindings.DoctorDataVo2.hints.Phone.label}" id="resId1c2">
+                                    <af:outputText value="#{row.Phone}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.Phone.tooltip}" id="ot2">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.DoctorDataVo2.hints.Phone.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.Email.name}" sortable="true"
+                                           headerText="#{bindings.DoctorDataVo2.hints.Email.label}" id="resId1c3">
+                                    <af:outputText value="#{row.Email}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.Email.tooltip}" id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.Age.name}" sortable="true"
+                                           headerText="#{bindings.DoctorDataVo2.hints.Age.label}" id="resId1c4">
+                                    <af:outputText value="#{row.Age}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.Age.tooltip}" id="ot4">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.DoctorDataVo2.hints.Age.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.DoctorSpecialization.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.DoctorDataVo2.hints.DoctorSpecialization.label}"
+                                           id="resId1c5">
+                                    <af:outputText value="#{row.DoctorSpecialization}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.DoctorSpecialization.tooltip}"
+                                                   id="ot5"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.DoctorCountry.name}"
+                                           sortable="true"
+                                           headerText="#{bindings.DoctorDataVo2.hints.DoctorCountry.label}"
+                                           id="resId1c6">
+                                    <af:outputText value="#{row.DoctorCountry}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.DoctorCountry.tooltip}"
+                                                   id="ot6"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.DoctorDataVo2.hints.DoctorCity.name}"
+                                           sortable="true" headerText="#{bindings.DoctorDataVo2.hints.DoctorCity.label}"
+                                           id="resId1c7">
+                                    <af:outputText value="#{row.DoctorCity}"
+                                                   shortDesc="#{bindings.DoctorDataVo2.hints.DoctorCity.tooltip}"
+                                                   id="ot7"/>
+                                </af:column>
+                            </af:table>
+                            <af:button text="Back" id="b1"
+                                       inlineStyle="margin-left:600px; margin-top:130px;font-size:30px;"
+                                       action="*choose_doc"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="40px" marginBottom="5px" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="stretch"
+                                 valign="stretch"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PatientDataEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PATIENT_DATA"
+  AliasName="PatientDataEo"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <Attribute
+    Name="PatientId"
+    ColumnName="PATIENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="PATIENT_DATA"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="PatientName"
+    Precision="20"
+    ColumnName="PATIENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <validation:LengthValidationBean
+      Name="PatientNameRule0"
+      ResId="DropDownlist.bc.entity.PatientDataEo.PatientName_Rule_1"
+      OnAttribute="PatientName"
+      CompareType="GREATERTHAN"
+      DataType="CHARACTER"
+      CompareLength="5"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    Precision="20"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <validation:LengthValidationBean
+      Name="PasswordRule0"
+      ResId="DropDownlist.bc.entity.PatientDataEo.Password_Rule_0"
+      OnAttribute="Password"
+      CompareType="GREATERTHAN"
+      DataType="CHARACTER"
+      CompareLength="5"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    ColumnName="PHONE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PATIENT_DATA">
+    <validation:RegExpValidationBean
+      Name="PhoneRule0"
+      ResId="DropDownlist.bc.entity.PatientDataEo.Phone_Rule_2"
+      OnAttribute="Phone"
+      Pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+      Inverse="false"/>
+    <validation:RegExpValidationBean
+      Name="PhoneRule1"
+      ResId="DropDownlist.bc.entity.PatientDataEo.Phone_Rule_3"
+      OnAttribute="Phone"
+      Pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="40"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="DropDownlist.bc.entity.PatientDataEo.Email_Rule_2"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    Precision="20"
+    ColumnName="GENDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PATIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Age"
+    ColumnName="AGE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PATIENT_DATA">
+    <validation:RangeValidationBean
+      Name="AgeRule0"
+      ResId="DropDownlist.bc.entity.PatientDataEo.Age_Rule_2"
+      OnAttribute="Age"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="1"
+      MaxValue="120"/>
+  </Attribute>
+  <Key
+    Name="PatientDataPatientIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PATIENT_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PATIENT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.PatientDataEo.PatientId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PatientDataPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PATIENT_DATA_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.PatientDataEo.PatientId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

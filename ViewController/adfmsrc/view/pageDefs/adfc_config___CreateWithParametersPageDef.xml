@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8"
+                id="adfc_config___CreateWithParametersPageDef" Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Message1" RangeSize="25" DataControl="AppModuleAMDataControl1" id="Message1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Message1Iterator" id="CreateWithParams" RequiresUpdateModel="true" Action="createWithParams">
+      <NamedData NDName="PatientId" NDValue="#{LoginBean1.user.id.value}" NDType="java.lang.String"/>
+      <NamedData NDName="PatientDisease" NDValue="#{pageFlowScope.disease}" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="pat_resPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="DocRes1" RangeSize="25" DataControl="AppModuleAMDataControl1" id="DocRes1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="DocRes1Iterator" StaticList="false" Uses="LOV_Days" id="Days" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="DocRes1Iterator" StaticList="false" Uses="LOV_Intervals" id="Intervals" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleAMDataControl1"/>
+  </bindings>
+</pageDefinition>

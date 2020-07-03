@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DocResEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DOC_RES"
+  AliasName="DocResEo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="PatId"
+    ColumnName="PAT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DOC_RES"
+    PrimaryKey="true"
+    IsNotNull="true"/>
+  <Attribute
+    Name="DocId"
+    ColumnName="DOC_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DOC_RES"
+    PrimaryKey="true"
+    IsNotNull="true"/>
+  <Attribute
+    Name="Days"
+    Precision="30"
+    ColumnName="DAYS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOC_RES"
+    PrimaryKey="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Intervals"
+    Precision="30"
+    ColumnName="INTERVALS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOC_RES"
+    PrimaryKey="true"
+    IsNotNull="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="DocResDaysCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DOC_RES_DAYS_CHECK"/>
+      <Attr Name="_checkCondition" Value='"DAYS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="DocResDocIdCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DOC_RES_DOC_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"DOC_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="DocResIntervalsCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DOC_RES_INTERVALS_CHECK"/>
+      <Attr Name="_checkCondition" Value='"INTERVALS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="DocResPatIdCheck">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DOC_RES_PAT_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"PAT_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="DocreseoPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DOCRESEO_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.DocResEo.PatId"/>
+      <Item Value="DropDownlist.bc.entity.DocResEo.DocId"/>
+      <Item Value="DropDownlist.bc.entity.DocResEo.Days"/>
+      <Item Value="DropDownlist.bc.entity.DocResEo.Intervals"/>
+    </AttrArray>
+  </Key>
+</Entity>

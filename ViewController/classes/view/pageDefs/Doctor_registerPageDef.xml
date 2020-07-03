@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Doctor_registerPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="DoctorDataVo2" RangeSize="10" DataControl="AppModuleAMDataControl1" id="DoctorDataVo2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="DaoctorId">
+      <AttrNames>
+        <Item Value="DaoctorId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="DoctorName">
+      <AttrNames>
+        <Item Value="DoctorName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="Password">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="Gender">
+      <AttrNames>
+        <Item Value="Gender"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="Age">
+      <AttrNames>
+        <Item Value="Age"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DoctorDataVo2Iterator" id="DoctorSpecialization">
+      <AttrNames>
+        <Item Value="DoctorSpecialization"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DoctorDataVo2Iterator" StaticList="false" Uses="LOV_Gender" id="Gender1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <action id="Commit1" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleAMDataControl1"/>
+  </bindings>
+</pageDefinition>

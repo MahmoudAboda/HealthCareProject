@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="12.1.3.10.8"
+  SeparateXMLFiles="true"
+  PackageName="model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../Model.jpr"/>
+    <Attr Name="_NamedConnection" Value="Connection1"/>
+    <Attr Name="_appModuleNames0" Value="model.bc.module.AppModuleAM"/>
+    <Attr Name="_appModuleNames1" Value="DropDownlist.bc.module.AppModuleAM"/>
+    <Attr Name="_appModuleNames2" Value="DropDownlist.bc.module.common.AppModuleAM"/>
+  </DesignTime>
+  <Containee
+    Name="entity"
+    PackageName="DropDownlist.bc.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="common"
+    PackageName="DropDownlist.bc.module.common"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="module"
+    PackageName="DropDownlist.bc.module"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="uiview"
+    PackageName="DropDownlist.bc.uiview"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entity"
+    PackageName="model.bc.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="module"
+    PackageName="model.bc.module"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="uiview"
+    PackageName="model.bc.uiview"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Doctor_select_location">
+    <page>/Doctor_select_location.jsf</page>
+  </view>
+  <view id="Doctor_register">
+    <page>/Doctor_register.jsf</page>
+  </view>
+  <view id="Home_page">
+    <page>/Home_page.jsf</page>
+  </view>
+  <view id="patient_nav">
+    <page>/patient_nav.jsf</page>
+  </view>
+  <view id="choose_doctor">
+    <page>/choose_doctor.jsf</page>
+  </view>
+  <view id="patient_chat">
+    <page>/patient_chat.jsf</page>
+  </view>
+  <router id="router1">
+    <case id="__23">
+      <expression>#{pageFlowScope.disease=='Cancer'}</expression>
+      <outcome>cancer</outcome>
+    </case>
+    <case id="__48">
+      <expression>#{pageFlowScope.disease=='Sugar'}</expression>
+      <outcome>sugar</outcome>
+    </case>
+    <case id="__74">
+      <expression>#{pageFlowScope.disease=='Virus C'}</expression>
+      <outcome>viruc_c</outcome>
+    </case>
+    <default-outcome>outcome1</default-outcome>
+  </router>
+  <method-call id="CreateInsert3">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="CreateWithParameters">
+    <method>#{bindings.CreateWithParams.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="doctor_chat">
+    <page>/doctor_chat.jsf</page>
+  </view>
+  <view id="doctor_nav">
+    <page>/doctor_nav.jsf</page>
+  </view>
+  <method-call id="ExecuteWithParams1">
+    <method>#{bindings.ExecuteWithParams.execute}</method>
+    <outcome>
+      <fixed-outcome>ExecuteWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="ExecuteWithParams2">
+    <method>#{bindings.ExecuteWithParams.execute}</method>
+    <outcome>
+      <fixed-outcome>ExecuteWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="cancer_doc">
+    <page>/cancer_doc.jsf</page>
+  </view>
+  <view id="browse_message">
+    <page>/browse_message.jsf</page>
+  </view>
+  <method-call id="ExecuteWithParams">
+    <method>#{bindings.ExecuteWithParams.execute}</method>
+    <outcome>
+      <fixed-outcome>ExecuteWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="CreateInsert1">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="specific_doctor">
+    <page>/specific_doctor.jsf</page>
+  </view>
+  <view id="sugar_doctor">
+    <page>/sugar_doctor.jsf</page>
+  </view>
+  <view id="pat_res">
+    <page>/pat_res.jsf</page>
+  </view>
+  <view id="virus_c_doc">
+    <page>/virus_c_doc.jsf</page>
+  </view>
+  <method-call id="CreateInsert4">
+    <method>#{bindings.CreateInsert.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateInsert</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="CreateWithParameters1">
+    <method>#{bindings.CreateWithParams.execute}</method>
+    <outcome>
+      <fixed-outcome>CreateWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="patient_register1">
+    <page>/patient_register.jsf</page>
+  </view>
+  <control-flow-rule id="__5">
+    <from-activity-id>Home_page</from-activity-id>
+    <control-flow-case id="__6">
+      <from-outcome>Doc_Reg</from-outcome>
+      <to-activity-id>CreateInsert1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__25">
+      <from-outcome>pat</from-outcome>
+      <to-activity-id>CreateInsert3</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__72">
+      <from-outcome>doc_nav</from-outcome>
+      <to-activity-id>doctor_nav</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__1">
+      <to-activity-id>Home_page</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__2">
+      <from-outcome>pat_reg</from-outcome>
+      <to-activity-id>patient_register1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__7">
+    <from-activity-id>Doctor_register</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome>Doc_sel</from-outcome>
+      <to-activity-id>Doctor_select_location</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__9">
+    <from-activity-id>patient_nav</from-activity-id>
+    <control-flow-case id="__10">
+      <from-outcome>choosedoctor</from-outcome>
+      <to-activity-id>CreateInsert4</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__24">
+      <from-outcome>pat_chat</from-outcome>
+      <to-activity-id>CreateWithParameters</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__15">
+    <from-activity-id>choose_doctor</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome>*router</from-outcome>
+      <to-activity-id>router1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__46">
+      <from-outcome>*search</from-outcome>
+      <to-activity-id>specific_doctor</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__56">
+      <from-outcome>pat_res</from-outcome>
+      <to-activity-id>CreateWithParameters1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__85">
+      <from-outcome>pat_nav</from-outcome>
+      <to-activity-id>patient_nav</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__21">
+    <from-activity-id>router1</from-activity-id>
+    <control-flow-case id="__22">
+      <from-outcome>cancer</from-outcome>
+      <to-activity-id>cancer_doc</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__47">
+      <from-outcome>sugar</from-outcome>
+      <to-activity-id>sugar_doctor</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__73">
+      <from-outcome>viruc_c</from-outcome>
+      <to-activity-id>virus_c_doc</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__26">
+    <from-activity-id>CreateInsert3</from-activity-id>
+    <control-flow-case id="__27">
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>patient_nav</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__33">
+    <from-activity-id>CreateWithParameters</from-activity-id>
+    <control-flow-case id="__35">
+      <from-outcome>CreateWithParams</from-outcome>
+      <to-activity-id>patient_chat</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__30">
+    <from-activity-id>Doctor_select_location</from-activity-id>
+    <control-flow-case id="__32">
+      <from-outcome>doc_nav</from-outcome>
+      <to-activity-id>doctor_nav</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__49">
+      <from-outcome>Doc_reg</from-outcome>
+      <to-activity-id>Doctor_register</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__40">
+    <from-activity-id>ExecuteWithParams1</from-activity-id>
+    <control-flow-case id="__41">
+      <from-outcome>ExecuteWithParams</from-outcome>
+      <to-activity-id>doctor_chat</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__36">
+    <from-activity-id>doctor_nav</from-activity-id>
+    <control-flow-case id="__37">
+      <from-outcome>doc_chat</from-outcome>
+      <to-activity-id>ExecuteWithParams1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__51">
+      <from-outcome>*doc_sel</from-outcome>
+      <to-activity-id>Doctor_select_location</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__13">
+    <from-activity-id>ExecuteWithParams2</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome>ExecuteWithParams</from-outcome>
+      <to-activity-id>choose_doctor</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__39">
+    <from-activity-id>patient_chat</from-activity-id>
+    <control-flow-case id="__42">
+      <from-outcome>Browse</from-outcome>
+      <to-activity-id>ExecuteWithParams</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__63">
+      <from-outcome>pat_nav</from-outcome>
+      <to-activity-id>patient_nav</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__43">
+    <from-activity-id>ExecuteWithParams</from-activity-id>
+    <control-flow-case id="__44">
+      <from-outcome>ExecuteWithParams</from-outcome>
+      <to-activity-id>browse_message</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__31">
+    <from-activity-id>CreateInsert1</from-activity-id>
+    <control-flow-case id="__34">
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>Doctor_register</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__52">
+    <from-activity-id>doctor_chat</from-activity-id>
+    <control-flow-case id="__53">
+      <from-outcome>doc_nav</from-outcome>
+      <to-activity-id>doctor_nav</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__64">
+    <from-activity-id>browse_message</from-activity-id>
+    <control-flow-case id="__65">
+      <from-outcome>pat_chat</from-outcome>
+      <to-activity-id>patient_chat</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__58">
+    <from-activity-id>specific_doctor</from-activity-id>
+    <control-flow-case id="__59">
+      <from-outcome>*choose_doc</from-outcome>
+      <to-activity-id>choose_doctor</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__68">
+    <from-activity-id>cancer_doc</from-activity-id>
+    <control-flow-case id="__69">
+      <from-outcome>*choose_doctor</from-outcome>
+      <to-activity-id>choose_doctor</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__70">
+    <from-activity-id>sugar_doctor</from-activity-id>
+    <control-flow-case id="__71">
+      <from-outcome>choose_doc</from-outcome>
+      <to-activity-id>choose_doctor</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__75">
+    <from-activity-id>virus_c_doc</from-activity-id>
+    <control-flow-case id="__76">
+      <from-outcome>choose_doc</from-outcome>
+      <to-activity-id>choose_doctor</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__83">
+    <from-activity-id>pat_res</from-activity-id>
+    <control-flow-case id="__84">
+      <from-outcome>choose_doc</from-outcome>
+      <to-activity-id>choose_doctor</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__86">
+    <from-activity-id>CreateInsert4</from-activity-id>
+    <control-flow-case id="__87">
+      <from-outcome>CreateInsert</from-outcome>
+      <to-activity-id>ExecuteWithParams2</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__88">
+    <from-activity-id>CreateWithParameters1</from-activity-id>
+    <control-flow-case id="__89">
+      <from-outcome>CreateWithParams</from-outcome>
+      <to-activity-id>pat_res</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__12">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__29">
+      <from-outcome>Home</from-outcome>
+      <to-activity-id>Home_page</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__3">
+    <managed-bean-name>LoginBean1</managed-bean-name>
+    <managed-bean-class>view.LoginBean1</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>LoginBean2</managed-bean-name>
+    <managed-bean-class>view.LoginBean2</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__16">
+    <managed-bean-name>Chat</managed-bean-name>
+    <managed-bean-class>view.Chat</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__17">
+    <managed-bean-name>Chat1</managed-bean-name>
+    <managed-bean-class>view.Chat1</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__18">
+    <managed-bean-name>Chat2</managed-bean-name>
+    <managed-bean-class>view.Chat2</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__19">
+    <managed-bean-name>Chat3</managed-bean-name>
+    <managed-bean-class>view.Chat3</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__28">
+    <managed-bean-name>RouterBean</managed-bean-name>
+    <managed-bean-class>view.RouterBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__38">
+    <managed-bean-name>messageaftercommit</managed-bean-name>
+    <managed-bean-class>view.messageaftercommit</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__45">
+    <managed-bean-name>messageaftersend</managed-bean-name>
+    <managed-bean-class>view.messageaftersend</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__50">
+    <managed-bean-name>res_book</managed-bean-name>
+    <managed-bean-class>view.res_book</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__57">
+    <managed-bean-name>doc_res2</managed-bean-name>
+    <managed-bean-class>view.doc_res2</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__54">
+    <managed-bean-name>Messageafterbooking</managed-bean-name>
+    <managed-bean-class>view.Messageafterbooking</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="pat_res.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelBorderLayout id="pbl1" inlineStyle='background-image:url("12.jpg");'>
+                <f:facet name="start"/>
+                <f:facet name="bottom"/>
+                <f:facet name="end"/>
+                <f:facet name="top"/>
+                <af:panelGridLayout id="pgl1" inlineStyle="width:1000px;">
+                    <af:gridRow marginTop="5px" height="150px" id="gr1">
+                        <af:gridCell marginStart="5px" width="220px" id="gc1"/>
+                        <af:gridCell marginStart="5px" width="800px" id="gc2"/>
+                        <af:gridCell marginStart="5px" width="200px" marginEnd="5px" id="gc3"/>
+                    </af:gridRow>
+                    <af:gridRow marginTop="5px" height="10px" id="gr2">
+                        <af:gridCell marginStart="5px" width="20px" id="gc4"/>
+                        <af:gridCell marginStart="5px" width="400px" id="gc5"/>
+                        <af:gridCell marginStart="5px" width="20px" marginEnd="5px" id="gc6"/>
+                    </af:gridRow>
+                    <af:gridRow marginTop="5px" height="425px" id="gr3">
+                        <af:gridCell marginStart="5px" width="80px" id="gc7"/>
+                        <af:gridCell marginStart="5px" width="250px" id="gc8" halign="stretch" valign="stretch">
+                            <af:panelBox id="pb1" inlineStyle="background-color:GrayText;">
+                                <af:panelGroupLayout id="pgl2"
+                                                     inlineStyle="width:1194px; height:417px; background-color:GrayText; margin-top:-10px;"
+                                                     halign="center" valign="middle">
+                                    <af:toolbar id="t1">
+                                        <af:button text="Back" id="b2" inlineStyle="font-size:20px;margin-left:710px;"
+                                                   action="choose_doc"/>
+                                    </af:toolbar>
+                                    <af:outputText value="Choose Day" id="ot1"
+                                                   inlineStyle="font-size:20px; color:white; margin-top:0px; margin-left:420px; padding-top:0px;"/>
+                                    <af:selectOneChoice value="#{bindings.Days.inputValue}"
+                                                        label="#{bindings.Days.label}"
+                                                        required="#{bindings.Days.hints.mandatory}"
+                                                        shortDesc="#{bindings.Days.hints.tooltip}" id="soc1"
+                                                        inlineStyle="margin-left:350px; margin-top:50px; margin-bottom:70px;"
+                                                        contentStyle="color:red;width:180px;height:25px;font-size:15px;"
+                                                        labelStyle="color:white;font-size:18px;">
+                                        <f:selectItems value="#{bindings.Days.items}" id="si1"/>
+                                        <f:validator binding="#{bindings.Days.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:outputText value="Choose Interval" id="ot2"
+                                                   inlineStyle="margin-left:420px; margin-top:80px; color:white; font-size:20px;"
+                                                   truncateAt="0"/>
+                                    <af:selectOneListbox value="#{bindings.Intervals.inputValue}"
+                                                         label="#{bindings.Intervals.label}"
+                                                         required="#{bindings.Intervals.hints.mandatory}"
+                                                         shortDesc="#{bindings.Intervals.hints.tooltip}" id="sol1"
+                                                         inlineStyle="margin-left:330px; margin-top:50px; margin-bottom:40px;"
+                                                         labelStyle="color:white;font-size:18px;"
+                                                         contentStyle="color:red;width:180px;height:25px;font-size:15px;">
+                                        <f:selectItems value="#{bindings.Intervals.items}" id="si2"/>
+                                        <f:validator binding="#{bindings.Intervals.validator}"/>
+                                    </af:selectOneListbox>
+                                    <af:button text="Booking" disabled="false" id="b1"
+                                               inlineStyle="font-size:20px; margin-bottom:40px; margin-left:450px;"
+                                               action="#{Messageafterbooking.b1_action}"/>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="200px" marginEnd="5px" id="gc9"/>
+                    </af:gridRow>
+                    <af:gridRow marginTop="5px" height="50px" id="gr4">
+                        <af:gridCell marginStart="5px" width="20px" id="gc10"/>
+                        <af:gridCell marginStart="5px" width="400px" id="gc11"/>
+                        <af:gridCell marginStart="5px" width="20px" marginEnd="5px" id="gc12"/>
+                    </af:gridRow>
+                    <af:gridRow marginTop="5px" height="20px" marginBottom="5px" id="gr5">
+                        <af:gridCell marginStart="5px" width="20px" id="gc13"/>
+                        <af:gridCell marginStart="5px" width="400px" id="gc14"/>
+                        <af:gridCell marginStart="5px" width="20px" marginEnd="5px" id="gc15"/>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:panelBorderLayout>
+        </af:form>
+    </af:document>
+</f:view>

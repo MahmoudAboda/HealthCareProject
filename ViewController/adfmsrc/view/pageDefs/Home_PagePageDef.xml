@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Home_PagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="checkLogin1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="checkLogin1"
+                  IsViewObjectMethod="false" DataControl="AppModuleAMDataControl"
+                  InstanceName="data.AppModuleAMDataControl.dataProvider"
+                  ReturnName="data.AppModuleAMDataControl.methodResults.checkLogin1_AppModuleAMDataControl_dataProvider_checkLogin1_result">
+      <NamedData NDName="userName" NDType="java.lang.String"/>
+      <NamedData NDName="password" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="checkLogin2" RequiresUpdateModel="true" Action="invokeMethod" MethodName="checkLogin2"
+                  IsViewObjectMethod="false" DataControl="AppModuleAMDataControl"
+                  InstanceName="data.AppModuleAMDataControl.dataProvider"
+                  ReturnName="data.AppModuleAMDataControl.methodResults.checkLogin2_AppModuleAMDataControl_dataProvider_checkLogin2_result">
+      <NamedData NDName="userName" NDType="java.lang.String"/>
+      <NamedData NDName="password" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MessageEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="MESSAGE"
+  AliasName="MessageEo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="MessageId"
+    ColumnName="MESSAGE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="MESSAGE"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"
+    IsNotNull="true"/>
+  <Attribute
+    Name="PatientMessage"
+    Precision="49"
+    ColumnName="PATIENT_MESSAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MESSAGE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="49"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PatientId"
+    ColumnName="PATIENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MESSAGE"/>
+  <Attribute
+    Name="DoctorId"
+    ColumnName="DOCTOR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MESSAGE"/>
+  <Attribute
+    Name="DoctorMessage"
+    Precision="49"
+    ColumnName="DOCTOR_MESSAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MESSAGE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="49"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PatientDisease"
+    Precision="18"
+    ColumnName="PATIENT_DISEASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MESSAGE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="18"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="MessageMessageIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="MESSAGE_MESSAGE_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"MESSAGE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+  </Key>
+  <Key
+    Name="MessagePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="MESSAGE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.MessageEo.MessageId"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="doctor_chatPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="choosenMessageVo1" RangeSize="10" DataControl="AppModuleAMDataControl"
+              id="choosenMessageVo1Iterator"/>
+    <iterator Binds="choosenMessageVo1" RangeSize="25" DataControl="AppModuleAMDataControl1"
+              id="choosenMessageVo1Iterator1"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="MessageId">
+      <AttrNames>
+        <Item Value="MessageId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="DoctorMessage1">
+      <AttrNames>
+        <Item Value="DoctorMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="PatientDisease">
+      <AttrNames>
+        <Item Value="PatientDisease"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="PatientId">
+      <AttrNames>
+        <Item Value="PatientId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="DoctorId">
+      <AttrNames>
+        <Item Value="DoctorId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenMessageVo1Iterator1" id="PatientMessage">
+      <AttrNames>
+        <Item Value="PatientMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleAMDataControl1"/>
+    <attributeValues IterBinding="choosenMessageVo1Iterator1" id="DoctorMessage">
+      <AttrNames>
+        <Item Value="DoctorMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="choosenMessageVo1Iterator1" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="choosenMessageVo1Iterator1" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+  </bindings>
+</pageDefinition>

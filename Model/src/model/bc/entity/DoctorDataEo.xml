@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<?audit suppress oracle.ide.xml.wellformedness-error?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DoctorDataEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="DOCTOR_DATA"
+  AliasName="DoctorDataEo"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <Attribute
+    Name="DaoctorId"
+    ColumnName="DAOCTOR_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="DOCTOR_DATA"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="DoctorName"
+    Precision="20"
+    ColumnName="DOCTOR_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <validation:PreDefinedValidationBean
+      Name="DoctorNamePrecisionScale0"
+      Description="Precision : (20)"
+      ValName="Precision : (1)"
+      Subtype="PRECISION_SCALE"/>
+    <validation:LengthValidationBean
+      Name="DoctorNameRule0"
+      ResId="model.bc.entity.DoctorDataEo.DoctorName_Rule_1"
+      OnAttribute="DoctorName"
+      CompareType="GREATERTHANEQUALTO"
+      DataType="CHARACTER"
+      CompareLength="5"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    Precision="20"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <validation:LengthValidationBean
+      Name="PasswordRule0"
+      ResId="model.bc.entity.DoctorDataEo.Password_Rule_0"
+      OnAttribute="Password"
+      CompareType="GREATERTHANEQUALTO"
+      DataType="CHARACTER"
+      CompareLength="5"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    ColumnName="PHONE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DOCTOR_DATA">
+    <validation:RegExpValidationBean
+      Name="PhoneRule0"
+      ResId="model.bc.entity.DoctorDataEo.Phone_Rule_0"
+      OnAttribute="Phone"
+      Pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Gender"
+    Precision="20"
+    ColumnName="GENDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    Precision="40"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <validation:RegExpValidationBean
+      Name="EmailRule0"
+      ResId="model.bc.entity.DoctorDataEo.Email_Rule_0"
+      OnAttribute="Email"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="Age"
+    ColumnName="AGE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="DOCTOR_DATA">
+    <validation:RangeValidationBean
+      Name="AgeRule0"
+      ResId="model.bc.entity.DoctorDataEo.Age_Rule_1"
+      OnAttribute="Age"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="1"
+      MaxValue="110"/>
+  </Attribute>
+  <Attribute
+    Name="DoctorSpecialization"
+    Precision="20"
+    ColumnName="DOCTOR_SPECIALIZATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DoctorCountry"
+    Precision="20"
+    ColumnName="DOCTOR_COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DoctorCity"
+    Precision="20"
+    ColumnName="DOCTOR_CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="DOCTOR_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="DoctorDataDaoctorIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="DOCTOR_DATA_DAOCTOR_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"DAOCTOR_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bc.entity.DoctorDataEo.DaoctorId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="DoctorDataPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="DOCTOR_DATA_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>
+

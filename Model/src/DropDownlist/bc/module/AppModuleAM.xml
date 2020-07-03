@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModuleAM"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="SensInfo1"
+    ViewObjectName="DropDownlist.bc.uiview.SensInfoVo"/>
+  <ViewUsage
+    Name="CancerDoc1"
+    ViewObjectName="DropDownlist.bc.uiview.CancerDocVo"/>
+  <ViewUsage
+    Name="DoctorDataVo2"
+    ViewObjectName="model.bc.uiview.DoctorDataVo"/>
+  <ViewUsage
+    Name="Message1"
+    ViewObjectName="DropDownlist.bc.uiview.MessageVo"/>
+  <ViewUsage
+    Name="choosenMessageVo1"
+    ViewObjectName="DropDownlist.bc.uiview.choosenMessageVo"/>
+  <ViewUsage
+    Name="choosenDoctorDataVo1"
+    ViewObjectName="model.bc.uiview.choosenDoctorDataVo"/>
+  <ViewUsage
+    Name="BrowseMessageVo1"
+    ViewObjectName="DropDownlist.bc.uiview.BrowseMessageVo"/>
+  <ViewUsage
+    Name="SugarDoctor1"
+    ViewObjectName="DropDownlist.bc.uiview.SugarDoctorVo"/>
+  <ViewUsage
+    Name="ResInfo1"
+    ViewObjectName="DropDownlist.bc.uiview.ResInfoVo"/>
+  <ViewUsage
+    Name="VirusC1"
+    ViewObjectName="DropDownlist.bc.uiview.VirusCVo"/>
+  <ViewUsage
+    Name="DocRes1"
+    ViewObjectName="DropDownlist.bc.uiview.DocResVo"/>
+</AppModule>

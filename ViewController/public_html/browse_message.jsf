@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="browse_message.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+        <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="15%" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:image source="#{resource['images:Untitled-1.png']}" id="i1" inlineStyle="height:127px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="15%" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="center">
+                        <af:outputText value="Browse previous messages" id="ot1"
+                                       inlineStyle="color:red; font-size:25px; margin-top:8px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="100px" height="150px" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center">
+                        <af:outputText value="#{bindings.PatientMessage1.inputValue}"
+                                       shortDesc="#{bindings.PatientMessage1.hints.tooltip}" id="ot2"
+                                       inlineStyle="font-size:30px;color:black"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="10px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="50px" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5" halign="center"
+                                 inlineStyle="margin-top:40px;">
+                        <af:link actionListener="#{bindings.Previous.execute}"
+                                 disabled="false" partialSubmit="true" id="l2"
+                                 icon="#{resource['images:if_skip-previous_326509.png']}"/>
+                        <af:link actionListener="#{bindings.Next.execute}"
+                                 disabled="false" partialSubmit="true" id="l1"
+                                 icon="#{resource['images:if_next_293690.png']}" inlineStyle="margin-left:900px;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="20px" height="100px" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="center">
+                        <af:outputText value="#{bindings.DoctorMessage1.inputValue}"
+                                       shortDesc="#{bindings.DoctorMessage1.hints.tooltip}" id="ot3"
+                                       inlineStyle="font-size:30px;color:blue;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="30px" height="25%" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="center">
+                        <af:button text="Back" id="b2"
+                                   inlineStyle="margin-top:8px;height:30px; text-align:justify; text-indent:0pt;font-size:23px; text-height:font-size;"
+                                   action="pat_chat"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="3px" marginBottom="5px" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                        <af:image source="#{resource['images:Untitled-1.png']}" id="i2"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        
+        </af:form>
+    </af:document>
+</f:view>

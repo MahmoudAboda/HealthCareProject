@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PtientDataEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PTIENT_DATA"
+  AliasName="PtientDataEo"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="model.bc.entity.PtientDataEoImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="PatientName"
+    IsNotNull="true"
+    Precision="8"
+    ColumnName="PATIENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PTIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PatientId"
+    IsNotNull="true"
+    ColumnName="PATIENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PTIENT_DATA"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Phonenum"
+    IsNotNull="true"
+    ColumnName="PHONENUM"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PTIENT_DATA">
+    <validation:RegExpValidationBean
+      Name="PhonenumRule0"
+      ResId="model.bc.entity.PtientDataEo.Phonenum_Rule_0"
+      OnAttribute="Phonenum"
+      Pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="PatientGender"
+    IsNotNull="true"
+    Precision="8"
+    ColumnName="PATIENT_GENDER"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="PTIENT_DATA"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    IsNotNull="true"
+    Precision="8"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PTIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Age"
+    IsNotNull="true"
+    ColumnName="AGE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PTIENT_DATA">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="model.bc.entity.PtientDataEo.Age_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="model.bc.entity.PtientDataEo.Age_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="HistoryOfDisease"
+    IsNotNull="true"
+    Precision="8"
+    ColumnName="HISTORY_OF_DISEASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PTIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="8"/>
+    </DesignTime>
+    <validation:CompareValidationBean
+      Name="HistoryOfDiseaseRule0"
+      ResId="model.bc.entity.PtientDataEo.HistoryOfDisease_Rule_0"
+      OnAttribute="HistoryOfDisease"
+      OperandType="EXPR"
+      Inverse="false"
+      CompareType="LESSTHANEQUALTO">
+      <validation:TransientExpression
+        trustMode="untrusted"><![CDATA[adf.currentDate]]></validation:TransientExpression>
+    </validation:CompareValidationBean>
+  </Attribute>
+  <Attribute
+    Name="PatientEmail"
+    Precision="15"
+    ColumnName="PATIENT_EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PTIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <validation:RegExpValidationBean
+      Name="PatientEmailRule0"
+      ResId="model.bc.entity.PtientDataEo.PatientEmail_Rule_0"
+      OnAttribute="PatientEmail"
+      Pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+      Inverse="false"/>
+  </Attribute>
+  <Attribute
+    Name="PatientCountry"
+    Precision="12"
+    ColumnName="PATIENT_COUNTRY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PTIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PatientDisease"
+    Precision="15"
+    ColumnName="PATIENT_DISEASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PTIENT_DATA">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PtientDataPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PTIENT_DATA_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bc.entity.PtientDataEo.PatientId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

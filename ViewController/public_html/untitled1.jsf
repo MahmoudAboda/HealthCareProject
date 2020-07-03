@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="untitled1.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <dvt:mapToolbar mapId="map" id="mt2"/>
+        </af:form>
+        <dvt:map id="map" startingX="0.0" mapServerConfigId="newconfig" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+                 inlineStyle="width:796px; height:561px;" startingY="0.0" autoZoomThemeId="mt1">
+            <dvt:mapPointTheme id="mt1" value="#{bindings.DoctorDataVo1.geoMapModel}"
+                               clickListener="#{bindings.DoctorDataVo1.geoMapModel.processClickAction}"
+                               selectionListener="#{bindings.DoctorDataVo1.geoMapModel.processSelection}"/>
+        </dvt:map>
+        <af:image source="#{resource['images:doctor home1.jpg']}" id="i1"/>
+    </af:document>
+</f:view>

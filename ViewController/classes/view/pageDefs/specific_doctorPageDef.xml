@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="specific_doctorPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DoctorDataVo2" RangeSize="25" DataControl="AppModuleAMDataControl1" id="DoctorDataVo2Iterator"/>
+    <searchRegion Criteria="DoctorDataVoCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="DoctorDataVo2Iterator" id="DoctorDataVoCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="DoctorDataVo2Iterator" id="DoctorDataVo2">
+      <nodeDefinition DefName="model.bc.uiview.DoctorDataVo" Name="DoctorDataVo20">
+        <AttrNames>
+          <Item Value="DoctorName"/>
+          <Item Value="Phone"/>
+          <Item Value="Email"/>
+          <Item Value="Age"/>
+          <Item Value="DoctorSpecialization"/>
+          <Item Value="DoctorCountry"/>
+          <Item Value="DoctorCity"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

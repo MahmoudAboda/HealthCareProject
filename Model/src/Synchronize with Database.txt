@@ -1,0 +1,8 @@
+The following Synchronization Actions were performed successfully:
+
+Entity :PatientDataEo
+  Attribute :PatientId
+    Change Mandatory to:true
+Entity :MessageEo
+  Attribute :MessageId
+    Change Mandatory to:true

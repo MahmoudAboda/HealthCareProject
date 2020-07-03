@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="Doctor_select_location.jsf" id="d1">
+    <af:messages id="m1"/>
+    <?audit suppress oracle.ide.xml.wellformedness-error?>
+    <af:form id="f1">
+      <af:panelBorderLayout id="pbl1" inlineStyle='background-image:url("10.jpg");'>
+        <f:facet name="start"/>
+        <f:facet name="bottom"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <af:panelGridLayout id="pgl1">
+          <af:gridRow marginTop="5px" height="60px" id="gr1">
+            <af:gridCell marginStart="5px" columnSpan="3" marginEnd="5px" id="gc1" width="auto" halign="stretch"
+                         valign="stretch">
+              <af:panelGridLayout id="pgl2">
+                <af:gridRow marginTop="5px" height="30%" id="gr4">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="start" valign="middle"
+                               inlineStyle="font-synthesis:none;"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="70%" marginBottom="5px" id="gr5">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="stretch" valign="stretch"
+                               inlineStyle="font-synthesis:none;"/>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:gridCell>
+          </af:gridRow>
+          <af:gridRow marginTop="5px" height="500px" id="gr2">
+            <af:gridCell marginStart="5px" width="25%" id="gc2"/>
+            <af:gridCell width="70%" id="gc3" inlineStyle="color:Black;" halign="stretch" valign="stretch">
+              <af:panelBox id="pb1" background="dark" type="default"
+                           inlineStyle="width:700px; padding-top:40px; margin-top:10px;" titleHalign="center">
+                <af:panelGroupLayout id="pgl3"
+                                     inlineStyle="padding-top:20px; background-color:ThreeDDarkShadow; margin-top:-10px;">
+                  <af:toolbar id="t1">
+                    <af:button text="Back" id="b3" inlineStyle="font-size:20px; padding-left:0px; margin-left:550px;"
+                               action="Doc_reg"/>
+                    <af:button text="Home" id="b2" inlineStyle="font-size:20px;" action="Home"/>
+                  </af:toolbar>
+                  <af:outputText value="Detect location and speciality to reach more patients" id="ot1"
+                                 inlineStyle="font-size:25px; margin-left:60px;color:yellow;"/>
+                  <af:selectOneChoice label="Choose speciality" id="soc2"
+                                      contentStyle="margin-left:76px;height:20px;width:250px;font-size:15px;"
+                                      labelStyle="color:white;font-size:20px;"
+                                      inlineStyle="margin-bottom:10px; margin-left:110px; margin-top:100px; padding-left:15px; padding-bottom:20px;"
+                                      value="#{pageFlowScope.diseases}">
+                    <af:selectItem label="Cancer" value="Cancer" id="si1"/>
+                    <af:selectItem label="Virus C" value="Virus C" id="si5"/>
+                    <af:selectItem label="Sugar" value="Sugar" id="si6"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice label="Choose governorate" id="soc3"
+                                      contentStyle="margin-left:53px;height:20px;width:250px;font-size:15px;"
+                                      labelStyle="color:white;font-size:20px;"
+                                      inlineStyle="margin-bottom:10px; margin-left:110px; margin-top:50px; padding-left:15px; padding-bottom:20px;"
+                                      value="#{bindings.DoctorCountry.inputValue}">
+                    <af:selectItem label="Sharqia" value="Sharqia" id="si7"/>
+                    <af:selectItem label="Cairo" value="Cairo" id="si8"/>
+                    <af:selectItem label="Giza" value="Giza" id="si9"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.DoctorCity.inputValue}" label="#{bindings.DoctorCity.hints.label}"
+                                required="#{bindings.DoctorCity.hints.mandatory}"
+                                columns="#{bindings.DoctorCity.hints.displayWidth}"
+                                maximumLength="#{bindings.DoctorCity.hints.precision}"
+                                shortDesc="#{bindings.DoctorCity.hints.tooltip}" id="it1"
+                                contentStyle="margin-left:140px;height:20px;width:250px;font-size:15px;"
+                                labelStyle="color:white;font-size:20px;"
+                                inlineStyle="margin-left:120px; margin-top:50px;">
+                    <f:validator binding="#{bindings.DoctorCity.validator}"/>
+                  </af:inputText>
+                  <af:button actionListener="#{bindings.Commit.execute}" text="Submit"
+                             disabled="false" id="b1"
+                             inlineStyle="margin-left:300px; margin-top:50px; width:15%; text-align:center; font-size:large;"
+                             action="doc_nav"/>
+                </af:panelGroupLayout>
+              </af:panelBox>
+            </af:gridCell>
+            <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc4"/>
+          </af:gridRow>
+          <af:gridRow marginTop="5px" height="20%" marginBottom="5px" id="gr3">
+            <af:gridCell id="gc5" halign="stretch" valign="stretch" columnSpan="3" rowSpan="1"
+                         inlineStyle="margin-left:50px; padding-left:50px;width:60px;" width="40px">
+              <af:panelGridLayout id="pgl4">
+                <af:gridRow marginTop="5px" height="20%" id="gr6">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" halign="stretch"
+                               valign="stretch"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="80%" marginBottom="5px" id="gr7">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9" halign="stretch"
+                               valign="stretch"/>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:gridCell>
+          </af:gridRow>
+        </af:panelGridLayout>
+      </af:panelBorderLayout>
+    </af:form>
+      </af:document>
+</f:view>

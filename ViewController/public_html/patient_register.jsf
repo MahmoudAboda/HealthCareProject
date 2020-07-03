@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+  <af:document title="patient_register.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelBorderLayout id="pbl1"
+                            inlineStyle='background-color:WindowText; background-image:url("088.JPG"); height:929px;'>
+        <f:facet name="start"/>
+        <f:facet name="bottom"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <af:panelGridLayout id="pgl1">
+          <af:gridRow marginTop="5px" height="100px" id="gr1">
+            <af:gridCell marginStart="5px" columnSpan="3" marginEnd="5px" id="gc1" width="auto" halign="stretch"
+                         valign="stretch">
+              <af:panelGridLayout id="pgl2">
+                <af:gridRow marginTop="5px" height="30%" id="gr4">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="start" valign="middle"
+                               inlineStyle="font-synthesis:none;">
+                    <af:panelBox id="pb1" background="dark" type="default"
+                                 inlineStyle="width:700px; padding-top:40px; background-color:ThreeDDarkShadow; height:476px; margin-bottom:0px; margin-top:190px;"
+                                 titleHalign="center">
+                      <af:panelGroupLayout id="pgl3"
+                                           inlineStyle="padding-top:20px; margin-left:0px; background-color:ThreeDDarkShadow; margin-top:-10px; margin-bottom:-20px;">
+                        <af:toolbar id="t1">
+                          <af:button text="Home" id="b1" inlineStyle="margin-left:50px;font-size:20px;" action="Home"/>
+                        </af:toolbar>
+                        <af:inputText label="Name" id="it1"
+                                      inlineStyle="margin-bottom:25px; margin-left:100px; margin-right:0px; margin-top:20px; font-size:medium; column-width:100px; text-height:auto; break-after:auto; border-bottom-left-radius:30px 30px; min-width:60pt; padding-bottom:10px;"
+                                      labelStyle="color:white;font-size:20px;"
+                                      contentStyle="margin-left:80px;height:20px;width:250px;font-size:15px;"/>
+                        <af:inputText label="Password" id="it2" labelStyle="color:white;font-size:20px;"
+                                      inlineStyle="margin-bottom:15px; margin-left:80px; margin-top:20px; padding-left:15px; padding-bottom:20px;"
+                                      contentStyle="margin-left:51px;height:20px;width:250px;font-size:15px;"
+                                      secret="true"/>
+                        <af:inputText label="Email" id="it3"
+                                      inlineStyle="margin-bottom:15px; margin-left:80px; margin-top:10px; padding-left:15px;"
+                                      labelStyle="color:white;font-size:20px;"
+                                      contentStyle="margin-left:90px;height:20px;width:250px;font-size:15px;"/>
+                        <af:inputText label="Phone Num" id="it5"
+                                      contentStyle="margin-left:39px;height:20px;width:250px;font-size:15px;"
+                                      labelStyle="color:white;font-size:20px;"
+                                      inlineStyle="padding-left:20px; margin-top:20px; margin-bottom:15px; padding-top:10px; padding-bottom:10px; margin-left:70px;"/>
+                        <af:inputNumberSpinbox label="Age" id="ins1"
+                                               contentStyle="margin-left:108px;height:20px;width:250px;font-size:15px;"
+                                               labelStyle="color:white;font-size:20px;"
+                                               inlineStyle="margin-left:90px; margin-top:20px; margin-bottom:20px;"/>
+                        <af:button text="REGISTER" disabled="false" id="b2"
+                                   inlineStyle="margin-left:250px; margin-top:50px; width:15%; text-align:center; font-size:large;"/>
+                      </af:panelGroupLayout>
+                    </af:panelBox>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="70%" marginBottom="5px" id="gr5">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7" halign="stretch" valign="stretch"
+                               inlineStyle="font-synthesis:none;"/>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:gridCell>
+          </af:gridRow>
+          <af:gridRow marginTop="5px" height="440px" id="gr2">
+            <af:gridCell marginStart="5px" width="25%" id="gc2"/>
+            <af:gridCell width="70%" id="gc3" inlineStyle="color:Black;" halign="stretch" valign="stretch"/>
+            <af:gridCell marginStart="5px" width="20%" marginEnd="5px" id="gc4"/>
+          </af:gridRow>
+          <af:gridRow marginTop="5px" height="130px" marginBottom="5px" id="gr3">
+            <af:gridCell id="gc5" halign="stretch" valign="stretch" columnSpan="3" rowSpan="1"
+                         inlineStyle="margin-left:50px; padding-left:50px;width:60px;" width="40px">
+              <af:panelGridLayout id="pgl4">
+                <af:gridRow marginTop="5px" height="20%" id="gr6">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8" halign="stretch"
+                               valign="stretch"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="80%" marginBottom="5px" id="gr7">
+                  <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9" halign="stretch"
+                               valign="stretch"/>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:gridCell>
+          </af:gridRow>
+        </af:panelGridLayout>
+      </af:panelBorderLayout>
+    </af:form>
+    <af:form id="f2">
+    </af:form>
+    <af:form id="f3">
+      <af:panelGridLayout id="pgl5">
+        <af:gridRow marginTop="5px" height="100px" id="gr8">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10"/>
+        </af:gridRow>
+        <af:gridRow marginTop="160px" height="30px" id="gr9">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11" inlineStyle="margin-left:0px;">
+            <af:outputText value="Services" id="ot1"
+                           inlineStyle="font-size:25px; padding-left:0px; margin-left:150px;"/>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="25px" id="gr10" marginTop="20px">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12">
+            <af:outputText value="When you are suffering from an unexpected illness or injury, or when you simply require general medical " id="ot2"
+                           inlineStyle="font-size:15px; margin-top:20px; margin-left:20px;"/>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="25px" id="gr11">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
+            <af:outputText value="attention without waiting for an appointment, we are the provider you need. Our professional team of board-" id="ot3"
+                           inlineStyle="font-size:15px; margin-top:20px; margin-left:20px;"/>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="25px" id="gr12">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+            <af:outputText value="certified physicians, nurses and technicians is equipped to handle a comprehensive range of urgent " id="ot4"
+                           inlineStyle="font-size:15px; margin-top:20px; margin-left:20px;"/>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="120px" marginBottom="5px" id="gr13">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15" halign="stretch" valign="stretch">
+            <af:panelGridLayout id="pgl6">
+              <af:gridRow marginTop="5px" height="27px" id="gr14">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc16">
+                  <af:outputText value="medical conditions and injuries, routine illnesses, and general medical services.   " id="ot5"
+                                 inlineStyle="font-size:15px; margin-top:20px; margin-left:20px;"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="30px" id="gr15">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
+                  <af:outputText value="​You can be assured – we have a commitment to excellence when it comes to the level of care we " id="ot6"
+                                 inlineStyle="font-size:18px; margin-top:20px; margin-left:20px;"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="40px" marginBottom="5px" id="gr16">
+                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc18">
+                  <af:outputText value="provide ." id="ot7"
+                                 inlineStyle="font-size:18px; margin-top:20px; margin-left:20px;" truncateAt="0"/>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:form>
+  </af:document>
+</f:view>

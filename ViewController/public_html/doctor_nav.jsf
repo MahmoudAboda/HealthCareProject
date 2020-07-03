@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="doctor_nav.jsf" id="d1">
+        <af:form id="f1">
+        <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="2%" id="gr1">
+                    <af:gridCell marginStart="5px" width="10%" id="gc1"/>
+                    <af:gridCell marginStart="5px" width="80%" id="gc2"/>
+                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc3"/>
+                </af:gridRow>
+                <af:gridRow height="25%" id="gr2">
+                    <af:gridCell width="10%" id="gc4"
+                                 inlineStyle="background-color:ThreeDDarkShadow;" valign="stretch" halign="stretch">
+                        <af:panelBorderLayout id="pbl2">
+                            <f:facet name="start"/>
+                            <f:facet name="bottom"/>
+                            <f:facet name="end"/>
+                            <f:facet name="top"/>
+                        </af:panelBorderLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="80%" id="gc5" halign="stretch" valign="stretch">
+                        <af:image id="i1" source="#{resource['images:slide-two.jpg']}" inlineStyle="height:315px;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc6" halign="stretch"
+                                 valign="stretch">
+                        <af:panelBorderLayout id="pbl3" inlineStyle="background-color:GrayText;">
+                            <f:facet name="start"/>
+                            <f:facet name="bottom"/>
+                            <f:facet name="end"/>
+                            <f:facet name="top"/>
+                        </af:panelBorderLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="50%" marginBottom="5px" id="gr3">
+                    <af:gridCell width="10%" id="gc7" halign="stretch" valign="stretch">
+                        <af:panelBorderLayout id="pbl1" inlineStyle="background-color:ThreeDDarkShadow; height:458px;">
+                            <f:facet name="start"/>
+                            <f:facet name="bottom"/>
+                            <f:facet name="end"/>
+                            <f:facet name="top"/>
+                        </af:panelBorderLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="100px" id="gc8" halign="stretch" valign="stretch">
+                        <af:panelGridLayout id="pgl2" inlineStyle="background-color:InactiveCaption;height:300px;">
+                            <af:gridRow marginTop="30px" height="200px" id="gr4">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10" halign="center"
+                                             valign="middle">
+                                    <af:toolbar id="t1">
+                                        <af:button text="Home" id="b2"
+                                                   inlineStyle="font-size:20px; margin-left:810px; margin-bottom:50px;" action="Home"/>
+                                        <af:button text="Register" id="b4"
+                                                   inlineStyle="font-size:20px; margin-bottom:50px;"
+                                                   action="*doc_sel"/>
+                                    </af:toolbar>
+                                    <af:outputText value="Welcome mr /" id="ot1"
+                                                   inlineStyle="margin-top:80px; font-size:26px; color:blue; padding-top:30px; margin-left:220px;"/>
+                                    <af:outputText id="ot2"
+                                                   inlineStyle="padding-top:0px; margin-top:40px; font-size:26px; color:red; margin-left:5px; margin-right:10px;"
+                                                   value="#{LoginBean2.doctorname}"/>
+                                    <af:outputText value="to our website HEALTHCARE" id="ot3"
+                                                   inlineStyle="font-size:26px;color:blue;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="15px" height="100px" id="gr5">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11" halign="center"
+                                             valign="middle">
+                                    <af:outputText value="you can see patients Complaints and chat with them" id="ot6"
+                                                   inlineStyle="font-size:24px;color:blue;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="15px" height="100px" id="gr6">
+                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12" halign="center"
+                                             valign="top">
+                                    <af:outputText value="click here to chat with patients " id="ot4"
+                                                   inlineStyle="font-size:20px;color:red;margin-right:100px;"/>
+                                    <af:button text="Chat" id="b3"
+                                               inlineStyle="font-size:20px;width:70px;margin-right:100px;"
+                                               action="doc_chat"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc9" halign="stretch"
+                                 valign="stretch">
+                        <af:panelBorderLayout id="pbl4" inlineStyle="background-color:GrayText; height:456px;">
+                            <f:facet name="start"/>
+                            <f:facet name="bottom"/>
+                            <f:facet name="end"/>
+                            <f:facet name="top"/>
+                        </af:panelBorderLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        
+        </af:form>
+    </af:document>
+</f:view>

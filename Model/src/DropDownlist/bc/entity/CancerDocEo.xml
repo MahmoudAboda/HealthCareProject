@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CancerDocEo"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="CANCER_DOC"
+  AliasName="CancerDocEo"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Lon"
+    IsNotNull="true"
+    Precision="126"
+    ColumnName="LON"
+    SQLType="FLOAT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="FLOAT"
+    TableName="CANCER_DOC"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Lat"
+    Precision="126"
+    ColumnName="LAT"
+    SQLType="FLOAT"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="FLOAT"
+    TableName="CANCER_DOC"/>
+  <Attribute
+    Name="Data"
+    Precision="50"
+    ColumnName="DATA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="CANCER_DOC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="CancerDocPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="CANCER_DOC_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="DropDownlist.bc.entity.CancerDocEo.Lon"/>
+    </AttrArray>
+  </Key>
+</Entity>

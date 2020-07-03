@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="Home_page.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelTabbed position="above" id="pt1" dimensionsFrom="parent" maxTabSize="0" truncationStyle="none"
+                      rendered="true"
+                      inlineStyle="text-indent:50pt; column-gap:20px; background-position:0% 0%; background-color:#B1B8ED; flex-align:center; flex-item-align:center; margin-left:0px; margin-top:0px; padding-left:30px; list-style-position:outside; list-style-type:disc; grid-column-sizing:max-content; grid-column-span:1; grid-row-span:1; font-size:xx-large; tab-size:10px; text-height:font-size;"
+                      minTabSize="80px" styleClass="tab-size:10px;tab-height:60px;">
+        <af:showDetailItem id="tab1" text="Home" disclosed="true" flex="0" stretchChildren="none"
+                           inlineStyle="flex-wrap:wrap;" icon="#{resource['images:if_02_icons_2191535.png']}">
+          <af:image source="#{resource['images:doctor home4.png']}" id="i1" inlineStyle="width:1213px; height:600px;">
+            <?audit suppress oracle.adf.faces.imgshortdesc?>
+          </af:image>
+        </af:showDetailItem>
+        <af:showDetailItem id="tab2" text="Log IN" stretchChildren="first"
+                           icon="#{resource['images:if_login_173049.png']}">
+          <f:facet name="toolbar"/>
+          <af:panelBorderLayout id="pbl1" inlineStyle='background-image:url("11.png");'>
+            <f:facet name="start"/>
+            <f:facet name="bottom"/>
+            <f:facet name="end"/>
+            <f:facet name="top"/>
+            <af:panelGridLayout id="pgl3">
+              <af:gridRow marginTop="5px" height="10%" id="gr18">
+                <af:gridCell marginStart="5px" width="10%" id="gc19"/>
+                <af:gridCell marginStart="5px" width="80%" id="gc20"/>
+                <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc21"/>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="85%" marginBottom="5px" id="gr19">
+                <af:gridCell marginStart="5px" width="10%" id="gc22"/>
+                <af:gridCell marginStart="5px" width="80%" id="gc23">
+                  <af:panelGroupLayout id="pgl6" inlineStyle='background-image:url("back2.png");'>
+                    <af:panelAccordion discloseMany="false" id="pa1" inlineStyle="height:255px; width:995px;">
+                      <af:showDetailItem id="pane1" text="Sign In as aPatient" inflexibleHeight="100" flex="0">
+                        <f:facet name="toolbar"/>
+                        <af:panelGridLayout id="pgl5"
+                                            inlineStyle="height:450px; background-color:ThreeDDarkShadow; background-clip:border-box;">
+                          <af:gridRow marginTop="5px" height="10%" id="gr21">
+                            <af:gridCell marginStart="5px" width="10%" id="gc26"/>
+                            <af:gridCell marginStart="5px" width="80%" id="gc27" halign="stretch" valign="stretch">
+                              <af:outputText value="Log in  as patient" id="ot8"
+                                             inlineStyle="color:white; font-size:30px; margin-left:180px; margin-top:20px;"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc28"/>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="80%" id="gr22">
+                            <af:gridCell marginStart="5px" width="10%" id="gc29"/>
+                            <af:gridCell marginStart="5px" width="80%" id="gc30" halign="stretch" valign="stretch">
+                              <af:image id="i7"
+                                        inlineStyle="margin-left:250px; margin-top:10px; padding-top:0px; height:100px; width:128px;"
+                                        source="#{resource['images:if_medical_icon_5_1290985.png']}">
+                                <?audit suppress oracle.adf.faces.imgshortdesc?>
+                              </af:image>
+                              <af:inputText label="Name :" id="it1" labelStyle="color:white;font-size:20px;"
+                                            contentStyle="width:200px;height:15px;margin-left:35px;"
+                                            inlineStyle="margin-top:60px; margin-left:100px;"
+                                            value="#{LoginBean1.patientName}"/>
+                              <af:inputText label="Password :" id="it2" contentStyle="width:200px;height:15px;"
+                                            labelStyle="color:white;font-size:20px;;"
+                                            inlineStyle="margin-left:100px; margin-top:40px;"
+                                            value="#{LoginBean1.password}" secret="true"/>
+                              <af:button text=" Log In" id="b1"
+                                         inlineStyle="margin-top:80px; margin-left:50px;text-align:center;font-size:23px;"
+                                         action="#{LoginBean1.validatelogin}"/>
+                              <af:link text="Create new account" id="l2"
+                                       inlineStyle="color:white; font-size:22px; margin-left:200px;" action="*Pat_Reg"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc31"/>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="10%" marginBottom="5px" id="gr23">
+                            <af:gridCell marginStart="5px" width="10%" id="gc32"/>
+                            <af:gridCell marginStart="5px" width="80%" id="gc33"/>
+                            <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc34"/>
+                          </af:gridRow>
+                        </af:panelGridLayout>
+                      </af:showDetailItem>
+                      <af:showDetailItem id="pane2" text="Sign In as Doctor" flex="0">
+                        <af:panelGridLayout id="pgl4" inlineStyle="background-color:ThreeDDarkShadow;height:450px;">
+                          <af:gridRow marginTop="5px" height="10%" id="gr20">
+                            <af:gridCell marginStart="5px" width="10%" id="gc25"/>
+                            <af:gridCell marginStart="5px" width="80%" id="gc35" halign="stretch" valign="stretch">
+                              <af:outputText value="Log In as Doctor" id="ot9"
+                                             inlineStyle="color:white; font-size:30px; margin-left:180px; margin-top:20px;"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc36"/>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="80%" id="gr24">
+                            <af:gridCell marginStart="5px" width="10%" id="gc37"/>
+                            <af:gridCell marginStart="5px" width="80%" id="gc38" halign="stretch" valign="stretch">
+                              <af:image source="#{resource['images:if_doctor_44698.png']}" id="i8"
+                                        inlineStyle="margin-left:250px; margin-top:20px; width:77px;">
+                                <?audit suppress oracle.adf.faces.imgshortdesc?>
+                              </af:image>
+                              <af:inputText label="Name : " id="it3" labelStyle="color:white;font-size:20px;"
+                                            contentStyle="width:200px;height:15px;margin-left:35px;"
+                                            inlineStyle="margin-top:60px; margin-left:100px;"
+                                            value="#{LoginBean2.doctorname}"/>
+                              <af:inputText label="Password :" id="it4" labelStyle="color:white;font-size:20px;"
+                                            contentStyle="width:200px;height:15px;"
+                                            inlineStyle="margin-left:100px; margin-top:40px;"
+                                            value="#{LoginBean2.password}" secret="true"/>
+                              <af:button text="Log In" id="b2"
+                                         inlineStyle="margin-top:80px; margin-left:50px;text-align:center;font-size:23px;"
+                                         action="#{LoginBean2.validateLogin2}"/>
+                              <af:link text="Create new account" id="l1"
+                                       inlineStyle="color:white; font-size:22px; margin-left:200px;" action="Doc_Reg"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc39"/>
+                          </af:gridRow>
+                          <af:gridRow marginTop="5px" height="10%" marginBottom="5px" id="gr25">
+                            <af:gridCell marginStart="5px" width="10%" id="gc40"/>
+                            <af:gridCell marginStart="5px" width="80%" id="gc41"/>
+                            <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc42"/>
+                          </af:gridRow>
+                        </af:panelGridLayout>
+                      </af:showDetailItem>
+                    </af:panelAccordion>
+                  </af:panelGroupLayout>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="10%" marginEnd="5px" id="gc24"/>
+              </af:gridRow>
+            </af:panelGridLayout>
+          </af:panelBorderLayout>
+        </af:showDetailItem>
+        <af:showDetailItem id="tab3" text="Contact US" icon="#{resource['images:contact-512.png']}"
+                           inflexibleHeight="300" stretchChildren="first">
+          <af:panelGridLayout id="pgl1">
+            <af:gridRow marginTop="5px" height="80%" id="gr1">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" halign="stretch" valign="stretch">
+                <af:image source="#{resource['images:Capture.PNG']}" id="i2">
+                  <?audit suppress oracle.adf.faces.imgshortdesc?>
+                </af:image>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="10%" id="gr2">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="center">
+                <af:outputText value="We're Good At " id="ot1" inlineStyle="font-size:25px;"/>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="10%" id="gr3">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="center">
+                <af:outputText value="Get In Touch With Us " id="ot10" inlineStyle="font-size:30px;"/>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="30%" marginBottom="5px" id="gr4">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4" halign="stretch" valign="stretch">
+                <af:image source="#{resource['images:Capture2.PNG']}" id="i3">
+                  <?audit suppress oracle.adf.faces.imgshortdesc?>
+                </af:image>
+              </af:gridCell>
+            </af:gridRow>
+          </af:panelGridLayout>
+        </af:showDetailItem>
+        <af:showDetailItem id="tab4" text="About US" icon="#{resource['images:if_about_2639759.png']}">
+          <af:panelGridLayout id="pgl2">
+            <af:gridRow marginTop="5px" height="270px" id="gr5">
+              <af:gridCell width="100%" id="gc5" halign="stretch" valign="stretch">
+                <af:panelGridLayout id="pgl7" inlineStyle="margin-top:20px;">
+                  <af:gridRow marginTop="5px" height="47px" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"
+                                 inlineStyle="margin-top:0px;">
+                      <af:outputText value="Welcome to Health Care Site " id="ot2" inlineStyle="font-size:33px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="250px" marginBottom="5px" id="gr9">
+                    <af:gridCell width="100%" id="gc12"
+                                 valign="stretch" halign="stretch">
+                      <af:panelGridLayout id="pgl8">
+                        <af:gridRow marginTop="5px" height="35px" id="gr10">
+                          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
+                            <af:outputText value="I truly believe Augustine’s words are true and if you look at history you know it is true. There " id="ot3"
+                                           inlineStyle="margin-left:-30px;font-size:18px;"/>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="30px" id="gr11">
+                          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+                            <af:outputText value="are many people in the world with amazing talents who realize only a small percentage of " id="ot4"
+                                           inlineStyle="margin-left:-20px;font-size:18px;"/>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="32px" id="gr12">
+                          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15">
+                            <af:outputText value="their potential. We all know people who live this truth." id="ot5"
+                                           inlineStyle="margin-left:-20px;font-size:18px;"/>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="25px" id="gr13">
+                          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc16">
+                            <af:outputText value="Positive pleasure-oriented goals are much more powerful motivators than negative fear-based " id="ot6"
+                                           inlineStyle="margin-left:-20px;font-size:18px;"/>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="25px" id="gr14">
+                          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
+                            <af:outputText value="ones. Although each is successful separately, the right combination of both is the most " id="ot7"
+                                           inlineStyle="margin-left:-20px;font-size:18px;"/>
+                          </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="25px" marginBottom="5px" id="gr15">
+                          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc18">
+                            <af:outputText value="powerful motivational force known to humankind." id="ot11"
+                                           inlineStyle="margin-left:-20px;font-size:18px;"/>
+                          </af:gridCell>
+                        </af:gridRow>
+                      </af:panelGridLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:gridCell>
+              <af:gridCell marginStart="5px" width="400px" marginEnd="5px" id="gc6" halign="end" valign="middle">
+                <af:image source="#{resource['images:05.jpg']}" id="i4" inlineStyle="height:275px; width:236px;">
+                  <?audit suppress oracle.adf.faces.imgshortdesc?>
+                </af:image>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="15px" height="100px" id="gr6">
+              <af:gridCell marginStart="5px" width="99%" id="gc7" halign="stretch" valign="stretch">
+                <af:panelGridLayout id="pgl9" inlineStyle="margin-top:-10px;">
+                  <af:gridRow marginTop="5px" height="40px" id="gr16">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc43" halign="center"
+                                 valign="middle" inlineStyle="margin-top:-20px;">
+                      <af:outputText value="We're Good At " id="ot12" inlineStyle="font-size:20px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="30px" marginBottom="5px" id="gr17">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc44" halign="center">
+                      <af:outputText value="Excellent Medical Technologies " id="ot13" inlineStyle="font-size:35px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:gridCell>
+              <af:gridCell marginStart="5px" width="1%" marginEnd="5px" id="gc8"/>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="220px" marginBottom="5px" id="gr7">
+              <af:gridCell marginStart="5px" width="30%" id="gc9" halign="stretch" valign="stretch">
+                <af:panelGridLayout id="pgl10">
+                  <af:gridRow marginTop="5px" height="210px" marginBottom="5px" id="gr26">
+                    <af:gridCell marginStart="5px" width="65%" id="gc45" halign="stretch" valign="stretch">
+                      <af:image source="#{resource['images:08.jpg']}" id="i5">
+                        <?audit suppress oracle.adf.faces.imgshortdesc?>
+                      </af:image>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc46"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:gridCell>
+              <af:gridCell marginStart="5px" width="70%" marginEnd="5px" id="gc10" halign="stretch" valign="stretch">
+                <af:panelGridLayout id="pgl11">
+                  <af:gridRow marginTop="5px" height="25px" id="gr27">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc47">
+                      <af:outputText value="Who we are and what we do " id="ot14"
+                                     inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="20px" id="gr28">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc48">
+                      <af:outputText value="One of the main areas that I work on with my clients is shedding " id="ot15" inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="20px" id="gr29">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc49">
+                      <af:outputText value="these non-supportive beliefs and replacing them to accomplish their " id="ot16" inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="30px" id="gr30">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc50">
+                      <af:outputText value="desires." id="ot17" inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="20px" id="gr31">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc51">
+                      <af:outputText value="So, there you have it; the six steps that will help you to the fabled " id="ot18" inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="20px" id="gr32">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc52">
+                      <af:outputText value="land of achievement and success! You now have the opportunity to " id="ot19" inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr33">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc53">
+                      <af:outputText value="push ahead and reach your potential." id="ot20" inlineStyle="font-size:18px;margin-left:-250px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:gridCell>
+            </af:gridRow>
+          </af:panelGridLayout>
+        </af:showDetailItem>
+      </af:panelTabbed>
+    </af:form>
+  </af:document>
+</f:view>

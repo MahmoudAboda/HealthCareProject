@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="browse_messagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="choosenMessageVo1" RangeSize="25" DataControl="AppModuleAMDataControl1"
+              id="choosenMessageVo1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="PatientMessage1">
+      <AttrNames>
+        <Item Value="PatientMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="choosenMessageVo1Iterator" id="DoctorMessage1">
+      <AttrNames>
+        <Item Value="DoctorMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="choosenMessageVo1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="choosenMessageVo1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+  </bindings>
+</pageDefinition>
